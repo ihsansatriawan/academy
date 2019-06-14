@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Routing on VanillaJS</h1>
+  <div>
+    <p onclick="onNavItemClick('/')">Home</p>
+    <p onclick="onNavItemClick('/contact')">Contact</p>
+  </div>
+
+  <div id="content"></div>
+</body>
+
+<script>
+  let homePage = `
+    <h1>Home</h1>
+  `
+  
+  let contactPage = `
+    <h1>Contact</h1>
+  `
+  
+  const routes = {
+    '/': homePage,
+    '/contact': contactPage
+  }
+
+  let contentDiv = document.getElementById('content');
+  contentDiv.innerHTML = routes[window.location.pathname];
+
+  window.onpopstate = () => {
+    contentDiv.innerHTML = routes[window.location.pathname];
+  }
+
+  let onNavItemClick = (pathName) => {
+    window.history.pushState({}, pathName, window.location.origin + pathName);
+    contentDiv.innerHTML = routes[pathName];
+  }
+  
+</script>
+
+</html>

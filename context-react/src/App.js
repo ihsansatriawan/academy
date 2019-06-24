@@ -8,6 +8,7 @@ function Toolbar(props) {
   return (
     <div>
       <ThemedButton />
+      <CustomButton />
     </div>
   );
 }
@@ -20,6 +21,15 @@ class ThemedButton extends Component {
 
   render() {
     return <div>{this.context}</div>;
+  }
+}
+
+class CustomButton extends Component {
+
+  render() {
+    return <ThemeContext.Consumer>
+    {context => <p>custom button: {context}</p>}
+    </ThemeContext.Consumer>
   }
 }
 

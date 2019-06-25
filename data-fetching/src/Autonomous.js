@@ -40,7 +40,7 @@ export default class Autonomous extends Component {
     const { users } = this.state;
 
     return (
-      <table>
+      <table style={{ border: '1px solid black' }}>
         <tbody>
         <tr>
           <th>id</th>

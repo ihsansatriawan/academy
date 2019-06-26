@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Autonomous from './Autonomous';
 import HoCUser from './HoCUser';
+import RenderPropsUser from './RenderPropsUser';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </p>
       <Autonomous />
       <HoCUser />
+      <RenderPropsUser />
     </div>
   );
 }

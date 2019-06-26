@@ -4,6 +4,7 @@ import './App.css';
 import Autonomous from './Autonomous';
 import HoCUser from './HoCUser';
 import RenderPropsUser from './RenderPropsUser';
+import UserHooks from './UserWithHooks';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Autonomous />
       <HoCUser />
       <RenderPropsUser />
+      <UserHooks />
     </div>
   );
 }

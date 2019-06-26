@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Autonomous from './Autonomous';
+import HoCUser from './HoCUser';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         Data Fetching
       </p>
       <Autonomous />
+      <HoCUser />
     </div>
   );
 }

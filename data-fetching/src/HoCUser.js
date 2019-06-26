@@ -4,7 +4,7 @@ import axios from 'axios'
 const USER_SERVICE_URL = 'https://jsonplaceholder.typicode.com/users';
 
 
-export default class Autonomous extends Component {
+export default class HoCUser extends Component {
   
   state = {
     isFetching: false,
@@ -60,7 +60,7 @@ export default class Autonomous extends Component {
     const { isFetching } = this.state;
 
     return (<Fragment>
-      <h1>Autonomous Fetching</h1>
+      <h1>HoCUser Fetching</h1>
       {isFetching ? this.renderLoading() : this.renderTable()}
     </Fragment>)
   }

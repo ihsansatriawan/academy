@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios'
+import SimpleUserTable from './SimpleUserTable';
 
 const USER_SERVICE_URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -30,38 +31,12 @@ export default class Autonomous extends Component {
     return <h1>Sedang Loading Guys!</h1>
   }
 
-  renderTable = () => {
-    const { users } = this.state;
-
-    return (
-      <table style={{ border: '1px solid black' }}>
-        <tbody>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>website</th>
-        </tr>
-        {
-          users.map(user => {
-            const idUser = user.id
-            return <tr key={idUser}>
-              <td>{idUser}</td>
-              <td>{user.name}</td>
-              <td>{user.website}</td>
-            </tr>
-          })
-        }
-        </tbody>
-      </table>
-    )
-  }
-
   render() {
-    const { isFetching } = this.state;
+    const { isFetching, users } = this.state;
 
     return (<Fragment>
       <h1>Autonomous Fetching</h1>
-      {isFetching ? this.renderLoading() : this.renderTable()}
+      {isFetching ? this.renderLoading() : <SimpleUserTable users={users} />}
     </Fragment>)
   }
 
